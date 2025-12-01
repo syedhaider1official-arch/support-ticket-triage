@@ -1,0 +1,48 @@
+{
+  "channel": "#support-triage",
+  "text": "Ticket requires human review",
+  "blocks": [
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*New ticket awaiting triage review*\n*Ticket:* {{ticket_id}}\n*Summary:* {{summary}}\n*Predicted:* {{issue_type}} / {{priority}}\n*Confidence:* {{confidence}}"
+      }
+    },
+    {
+      "type": "actions",
+      "block_id": "triage_actions",
+      "elements": [
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Approve & Route"
+          },
+          "style": "primary",
+          "action_id": "approve_route",
+          "value": "{{ticket_id}}"
+        },
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Request Changes"
+          },
+          "style": "danger",
+          "action_id": "request_changes",
+          "value": "{{ticket_id}}"
+        },
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Assign to Engineer"
+          },
+          "action_id": "assign_engineer",
+          "value": "{{ticket_id}}"
+        }
+      ]
+    }
+  ]
+}
